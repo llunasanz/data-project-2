@@ -537,6 +537,7 @@ def mqtt_device_demo(args):
         #payload = "{}/{}-payload-{}".format(args.registry_id, args.device_id, i)
         payload_device = {
             "device_id": args.device_id,
+            "battery_level": np.random.uniform(0, 100, None),
             "timeStamp": str(datetime.datetime.now()),
             "temperature": round(np.random.normal(34.5, 1, None),2),
             "bpm": round(np.random.normal(80, 10, None), 2),
