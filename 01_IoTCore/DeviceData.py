@@ -540,9 +540,9 @@ def mqtt_device_demo(args):
             "battery_level": np.random.uniform(0, 100, None),
             "timeStamp": str(datetime.datetime.now()),
             "temperature": round(np.random.normal(34.5, 1, None),2),
-            "bpm": round(np.random.normal(80, 10, None), 2),
-            "blood_pressure": round(np.random.normal(120, 15, None), 2),
-            "blood_O2": round(np.random.normal(97, 1, None), 2),
+            "bpm": round(np.random.normal(80, 10, None), 0),
+            "blood_pressure": round(np.random.normal(120, 15, None), 0),
+            "bloodPresiondos": round(np.random.normal(97, 1, None), 0),
             "longitude": f'{np.random.normal(39.28, 0.25, None)}',
             "latitude": f'{np.random.normal(-0.29, 0.01, None)}'
         }
