@@ -30,7 +30,6 @@ import random
 import ssl
 import time
 import json
-import numpy as np
 
 import jwt
 import paho.mqtt.client as mqtt
@@ -496,6 +495,8 @@ def mqtt_device_demo(args):
     # [START iot_mqtt_run]
     global minimum_backoff_time
     global MAXIMUM_BACKOFF_TIME
+    pasos=0
+    dosis=0
 
     # Publish to the events or state topic based on the flag.
     sub_topic = "events" if args.message_type == "event" else "state"
@@ -537,15 +538,16 @@ def mqtt_device_demo(args):
         #payload = "{}/{}-payload-{}".format(args.registry_id, args.device_id, i)
         payload_device = {
             "device_id": args.device_id,
-            "battery_level": np.random.uniform(0, 100, None),
             "timeStamp": str(datetime.datetime.now()),
-            "temperature": round(np.random.normal(34.5, 1, None),2),
-            "bpm": round(np.random.normal(80, 10, None), 0),
-            "blood_pressure": round(np.random.normal(120, 15, None), 0),
-            "bloodPresiondos": round(np.random.normal(97, 1, None), 0),
-            "longitude": f'{np.random.normal(39.28, 0.25, None)}',
-            "latitude": f'{np.random.normal(-0.29, 0.01, None)}'
+            "battery_level": round(random.randint(0,100),0),
+            "temperature": round(random.uniform(36,38),2),
+            "bpm": round(random.randint(70,90),0),
+            "blood_pressure": round(random.randint(105,130),0),
+            "bloodPresiondos": round(random.randint(95,98),0),
+            "longitude": round(random.uniform(39.27,0.25),2),
+            "latitude": round(random.uniform(-0.29,0.01),2)      
         }
+
         print("Publishing message {}/{}: '{}'".format(i, args.num_messages, payload_device))
         # [START iot_mqtt_jwt_refresh]
         seconds_since_issue = (datetime.datetime.now(tz=datetime.timezone.utc) - jwt_iat).seconds

@@ -1,54 +1,54 @@
 {
-  "fields": [
-  {
-    "mode": "NULLABLE",
-    "name": "device_id",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "battery_level",
-    "type": "INTEGER"
-  },
-   {
-    "mode": "NULLABLE",
-    "name": "processingTime",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "timeStamp",
-    "type": "STRING"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "temperature",
-    "type": "FLOAT"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "bpm",
-    "type": "INTEGER"
-  }, 
-  {
-    "mode": "NULLABLE",
-    "name": "blood_pressure",
-    "type": "INTEGER"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "bloodPresiondos",
-    "type": "INTEGER"
-  },    
-  {
-    "mode": "NULLABLE",
-    "name": "longitude",
-    "type": "FLOAT"
-  },
-  {
-    "mode": "NULLABLE",
-    "name": "latitude",
-    "type": "FLOAT"
-  }
-  ]
+    "fields": [
+    {
+      "mode": "NULLABLE",
+      "name": "device_id",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "timeStamp",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "processingTime",
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "battery_level",
+      "type": "INTEGER"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "temperature",
+      "type": "FLOAT"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "bpm",
+      "type": "INTEGER"
+    }, 
+    {
+      "mode": "NULLABLE",
+      "name": "blood_pressure",
+      "type": "INTEGER"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "bloodPresiondos",
+      "type": "INTEGER"
+    },    
+    {
+      "mode": "NULLABLE",
+      "name": "longitude",
+      "type": "FLOAT"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "latitude",
+      "type": "FLOAT"
+    }
+    ]
 }

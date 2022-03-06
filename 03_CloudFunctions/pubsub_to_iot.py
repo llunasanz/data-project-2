@@ -22,7 +22,7 @@ def pubsub_to_iot(event, context):
     device_id = os.environ['DEVICE_ID']
 
     #Logic for incoming data
-    room_temperature = range(17,23)
+    room_temperature = range(33,35)
 
     if message['aggTemperature'] in room_temperature:
         print("Temperature OK. Nothing to set.")
