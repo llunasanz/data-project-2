@@ -1,6 +1,5 @@
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-# (Team name here)
-A.Y.U.D.A
+# A.Y.U.D.A
+Protected senior
 
 # Data Project 2
 ## Máster en Data Analytics - EDEM
@@ -11,8 +10,6 @@ A.Y.U.D.A
 - [Rafa Pérez Soláns](https://www.linkedin.com/in/rafa-perez-solans/)
 - [Mª Ángeles Sanmartin Martinez](https://www.linkedin.com/in/m%C2%AAangeles-sanmart%C3%ADn-mart%C3%ADnez-76b4b9129/)
 - [Lluna Sanz Montrull](https://www.linkedin.com/in/llunasmontrull/)
-
-<a class="github-button" href="https://github.com/llunasanz" data-size="large" aria-label="Follow @llunasanz on GitHub">@llunasanz</a>
 
 # Proyecto
 ## Contexto
