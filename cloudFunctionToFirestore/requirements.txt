@@ -1,0 +1,2 @@
+google-cloud-iot
+google-cloud-firestore==1.3.0
