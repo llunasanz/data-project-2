@@ -1,5 +1,5 @@
 # A.Y.U.D.A
-Protected senior
+**Protected senior**
 
 # Data Project 2
 ## Máster en Data Analytics - EDEM
@@ -20,4 +20,6 @@ De cara a participar en este evento, vuestra solución debe ser escalable, opens
 ## ¿Qué es A.Y.U.D.A?
 A.Y.U.D.A se trata de una solución (...)
 
-
+# Tecnología
+## Implementación en Google Cloud
+### Requisitos
