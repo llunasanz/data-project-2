@@ -15,3 +15,6 @@ A.Y.U.D.A
 EDEM ha creado el día 12 de Marzo un evento de lanzamiento de empresas con productos IoT. Es vuestro momento! En este evento podréis presentar vuestro producto IoT como SaaS.
 Durante estas tres semanas, debéis pensar un producto IoT, desarrollarlo y simular su uso.
 De cara a participar en este evento, vuestra solución debe ser escalable, opensource y  cloud.
+
+## ¿Qué es A.Y.U.D.A?
+
