@@ -49,5 +49,30 @@ A.Y.U.D.A es una startup enfocada a la protección de la salud. Su primer reto e
 ## Arquitectura
 ![arquitectura](/media/Arquitectura_BUENA_final.jpg")
 
-## Procesamiento de datos Serverless con Dataflow
+## Setup
+### Iniciar servicios en Google Cloud
+```
+gcloud services enable dataflow.googleapis.com
+gcloud services enable cloudiot.googleapis.com
+gcloud services enable cloudbuild.googleapis.com
+```
 
+### Crear entorno de Python e instalar las dependencias
+```
+virtualenv -p python3 device
+source device/bin/activate
+```
+```
+pip install -U -r setup_dependencies.txt
+```
+
+### Pub/Sub
+Se crean dos temas en Pub/Sub:
+- iotToBigQuery
+- users\_data
+
+### IoT Core
+Se crea el registro _deviceRegistry_ y, dentro del mismo, el dispositivo _ayuDevice_ que simulará las medidas del dispositivo. Además, 
+
+### Cloud Storage
+Se crea un nuevo bucket 
