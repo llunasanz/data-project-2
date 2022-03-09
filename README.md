@@ -1,11 +1,13 @@
 # A.Y.U.D.A
 **Protected senior**
 
+<img src = "media/AYUDA_logo.png">
+
 # Data Project 2
 ## Máster en Data Analytics - EDEM
 ### Curso 2021/2022
 
-- [Ramón Cansans Camp](https://www.linkedin.com/in/ramon-casans-camp/)
+- [Ramón Casans Camp](https://www.linkedin.com/in/ramon-casans-camp/)
 - [Marta Castillo García](https://www.linkedin.com/in/marta-castillo-garc%C3%ADa-041bb169/)
 - [Rafa Pérez Soláns](https://www.linkedin.com/in/rafa-perez-solans/)
 - [Mª Ángeles Sanmartin Martinez](https://www.linkedin.com/in/m%C2%AAangeles-sanmart%C3%ADn-mart%C3%ADnez-76b4b9129/)
@@ -15,15 +17,21 @@
 ## Contexto
 EDEM ha creado el día 12 de Marzo un evento de lanzamiento de empresas con productos IoT. Es vuestro momento! En este evento podréis presentar vuestro producto IoT como SaaS.
 Durante estas tres semanas, debéis pensar un producto IoT, desarrollarlo y simular su uso.
-De cara a participar en este evento, vuestra solución debe ser escalable, opensource y  cloud.
+De cara a participar en este evento, la solución debe ser escalable, opensource y cloud.
 
 ## ¿Qué es A.Y.U.D.A?
-A.Y.U.D.A es una startup enfocada a la protección de la salud. Su primer reto es la asistencia médica y psicológica de los adultos de mayor edad, seguido por el de escalar su solución a bebés y colectivos más vulnerables, a nivel de salud, que puedan necesitalo. Para lograr este desafío, la startup ha lanzado una RFP para monitorear la frecuencia cardiaca, la temperatura, 
+A.Y.U.D.A es una startup enfocada a la protección de la salud. Su primer reto es la asistencia médica y psicológica de los adultos de mayor edad, seguido por el de escalar su solución a bebés y colectivos más vulnerables, a nivel de salud, que puedan necesitalo. Para lograr este desafío, la startup ha lanzado una RFP para monitorizar, en tiempo real, la frecuencia cardiaca, la temperatura corporal, la presión sanguínea y la localización del usuario mediante el uso de parches electrónicos. Estos envían la información a los dispositivos mediante la red LoRa.
 
+Ante cualquier valor anómalo de las métricas especificadas, _Protected Senior_ nuestra app avisará al cuidador, médico o persona responsable. De la misma manera, el dashboard se refrescará en tiempo real.
 
 # Tecnología
 ## Arquitectura
 <img src = "media/Arquitectura_BUENA_final.jpg">
+
+### Justificación
+Se emplea la herramienta de _Pub/Sub_ por ser el servicio de mensajería de Google Cloud que permite intercambiar datos de eventos, así como comunicarse asíncronamente. Además, facilita la conexión de los mensajes con el resto de servicios de la plataforma.
+
+Por las características del proyecto, que será vendido tanto a clientes como empresas, _Pub/Sub_ tendrá un topic conectado a la herramienta de análisis de los datos (almacenados en _Cloud Storage_) _BigQuery_ y otro topic conectado a _Cloud Functions_.
 
 ## Setup (parte 1)
 ### Iniciar servicios en Google Cloud
@@ -50,8 +58,8 @@ Se crean dos temas en Pub/Sub:
 ### IoT Core
 En [IoT Core](https://console.cloud.google.com/iot) se  crea el registro _deviceRegistry_. Luego, se genera una clave RSA con el estándar X.509 ejecutando el siguiente comando, dentro de la carpeta <em>01_IoTCore></em> en la consola de comandos:
 ```
-openssl req -x509 -nodes -newkey rsa:2048 -keyout rsa_private.pem
-  \ -out rsa_cert.pem -subj "/CN=unused"
+openssl req -x509 -nodes -newkey rsa:2048 -keyout rsa\_private.pem
+  \ -out rsa\_cert.pem -subj "/CN=unused"
 ```
 Con la clave obtenida, se crea el dispositivo dentro del registro _deviceRegistry_ con el nombre _ayuDevice_ que simulará las medidas del dispositivo de A.Y.U.D.A se accede a la pestaña de _autenticación_ del registro creado y se agrega la clave pública generada en el apartado _comunicación, cloud logging y autenticación_.
 
