@@ -23,7 +23,7 @@ A.Y.U.D.A es una startup enfocada a la protección de la salud. Su primer reto e
 
 # Tecnología
 ## Arquitectura
-[arquitectura](/media/Arquitectura_BUENA_final.jpg")
+<img src = "media/Arquitectura_BUENA_final.jpg">
 
 ## Setup (parte 1)
 ### Iniciar servicios en Google Cloud
