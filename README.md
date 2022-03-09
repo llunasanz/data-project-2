@@ -47,7 +47,7 @@ A.Y.U.D.A es una startup enfocada a la protección de la salud. Su primer reto e
 
 # Tecnología
 ## Arquitectura
-![arquitectura](/media/Arquitectura_BUENA_final.jpg")
+[arquitectura](/media/Arquitectura_BUENA_final.jpg")
 
 ## Setup
 ### Iniciar servicios en Google Cloud
@@ -72,7 +72,19 @@ Se crean dos temas en Pub/Sub:
 - users\_data
 
 ### IoT Core
-Se crea el registro _deviceRegistry_ y, dentro del mismo, el dispositivo _ayuDevice_ que simulará las medidas del dispositivo. Además, 
+En [IoT Core](https://console.cloud.google.com/iot) se  crea el registro _deviceRegistry_. Luego, se genera una clave RSA con el estándar X.509 ejecutando el siguiente comando, dentro de la carpeta <em>01_IoTCore></em> en la consola de comandos:
+```
+openssl req -x509 -nodes -newkey rsa:2048 -keyout rsa_private.pem
+  \ -out rsa_cert.pem -subj "/CN=unused"
+```
+Con la clave obtenida, se crea el dispositivo dentro del registro _deviceRegistry_ con el nombre _ayuDevice_ que simulará las medidas del dispositivo de A.Y.U.D.A se accede a la pestaña de _autenticación_ del registro creado y se agrega la clave pública generada en el apartado _comunicación, cloud logging y autenticación_.
 
 ### Cloud Storage
-Se crea un nuevo bucket 
+Se crea un nuevo bucket con el nombre que mejor se considere (en este caso, _el-bucket-definitiu_) con la opción de región preferida.
+
+### BigQuery
+En la página de [BigQuery](https://console.cloud.google.com/bigquery), se crea un dataset con el que se trabajará. En este proyecto, se tratará del llamado _pleaseDataset_.
+
+## Ejecución del pipeline
+En la consola, se accede a la carpeta <em>02_Dataflow</em> y se ejecutan los siguientes comandos:
+
