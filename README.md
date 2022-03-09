@@ -1,7 +1,7 @@
 # A.Y.U.D.A
 **Protected senior**
 
-<img src = "media/AYUDA_logo.png" width="64">
+<img src = "media/AYUDA_logo.png" width="300">
 
 # Data Project 2
 ## Máster en Data Analytics - EDEM
