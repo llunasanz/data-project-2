@@ -73,7 +73,7 @@ def edemData(output_table):
 
         data = (
             #Read messages from PubSub
-            p | "Read messages from PubSub" >> beam.io.ReadFromPubSub(subscription=f"projects/tactile-wave-343217/subscriptions/{output_table}-sub", with_attributes=True)
+            p | "Read messages from PubSub" >> beam.io.ReadFromPubSub(subscription=f"projects/ayuda-ultimo/subscriptions/{output_table}-sub", with_attributes=True)
             #Parse JSON messages with Map Function and adding Processing timestamp
               | "Parse JSON messages" >> beam.Map(parse_json_message)
         )
@@ -81,7 +81,7 @@ def edemData(output_table):
         #Part02: Write proccessing message to their appropiate sink
         #Data to Bigquery
         (data | "Write to BigQuery" >> beam.io.WriteToBigQuery(
-            table = f"tactile-wave-343217:pleaseDataset.{output_table}",
+            table = f"ayuda-ultimo:pleaseDataset.{output_table}",
             schema = schema,
             create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
             write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND
@@ -95,7 +95,7 @@ def edemData(output_table):
             | "WindowByMinute" >> beam.WindowInto(window.FixedWindows(60))
             | "MeanByWindow" >> beam.CombineGlobally(MeanCombineFn()).without_defaults()
             | "Add Window ProcessingTime" >> beam.ParDo(add_processing_time())
-            | "WriteToPubSub" >> beam.io.WriteToPubSub(topic="projects/tactile-wave-343217/topics/iotToCloudFunctions", with_attributes=False)
+            | "WriteToPubSub" >> beam.io.WriteToPubSub(topic="projects/ayuda-ultimo/topics/iotToCloudFunctions", with_attributes=False)
         )
 
 if __name__ == '__main__':
