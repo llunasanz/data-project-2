@@ -4,3 +4,4 @@ main.go
 main.tf
 providers.tf
 variables.tf
+!/02_Dataflow/Dockerfile
